@@ -40,36 +40,42 @@ class _HomeScreenState extends State<HomeScreen> {
           AccountScreen(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-          _controller.jumpToPage(index);
-        },
-        items: const [
-          BottomNavigationBarItem(
-            label: '发现',
-            icon: FaIcon(FontAwesomeIcons.compactDisc),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            label: '播客',
-            icon: FaIcon(FontAwesomeIcons.radio),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            label: '社区',
-            icon: FaIcon(FontAwesomeIcons.bomb),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            label: '我的',
-            icon: FaIcon(FontAwesomeIcons.music),
-            tooltip: '',
-          ),
-        ],
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (int index) {
+            setState(() {
+              _currentIndex = index;
+            });
+            _controller.jumpToPage(index);
+          },
+          items: const [
+            BottomNavigationBarItem(
+              label: '发现',
+              icon: FaIcon(FontAwesomeIcons.compactDisc),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              label: '播客',
+              icon: FaIcon(FontAwesomeIcons.radio),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              label: '社区',
+              icon: FaIcon(FontAwesomeIcons.bomb),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              label: '我的',
+              icon: FaIcon(FontAwesomeIcons.music),
+              tooltip: '',
+            ),
+          ],
+        ),
       ),
     );
   }
