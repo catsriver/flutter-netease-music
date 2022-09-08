@@ -20,8 +20,8 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
         unselectedItemColor: Colours.fontColor4,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: TextStyles.textSize14,
-        unselectedLabelStyle: TextStyles.textSize14,
+        selectedLabelStyle: TextStyles.textSize12,
+        unselectedLabelStyle: TextStyles.textSize12,
       ),
       colorScheme: ColorScheme.fromSwatch().copyWith(
         primary: Colours.primaryColor,
