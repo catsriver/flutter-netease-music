@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netease_cloud_music/provider/search/ball_menu_provider.dart';
 import 'package:netease_cloud_music/screen/search/widgets/ball_menu_item.dart';
 
 import '../../provider/search/banner_provider.dart';
@@ -16,6 +17,7 @@ class SearchScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final banners = ref.watch(bannerProvider);
+    final menus = ref.watch(ballMenuProvider);
 
     return Scaffold(
       appBar: const Header(),
@@ -72,17 +74,17 @@ class SearchScreen extends ConsumerWidget {
                 vertical: Dimens.vGapDp30,
               ),
               child: Row(
-                children: List.generate(
-                  10,
-                  (index) => const BallMenuItem(
-                    name: '每日推荐',
-                    iconUrl:
-                        'http://p1.music.126.net/4DpSgAVpJny4Ewf-Xw_WQQ==/109951163986641971.jpg',
-                  ),
-                ),
+                children: menus
+                    .map((menu) => BallMenuItem(
+                          name: menu.name,
+                          iconUrl: menu.iconUrl,
+                        ))
+                    .toList(),
               ),
             ),
           ),
+
+          //
         ],
       ),
     );
