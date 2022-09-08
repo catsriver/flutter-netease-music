@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netease_cloud_music/provider/search/playlist_rcmd_provider.dart';
 import 'package:netease_cloud_music/screen/search/widgets/slide_playlist.dart';
 
 import '../../res/resources.dart';
@@ -21,6 +22,7 @@ class SearchScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final banners = ref.watch(bannerProvider);
     final menus = ref.watch(ballMenuProvider);
+    final rcmdPlaylist = ref.watch(playlistRcmdProvider);
 
     return Scaffold(
       appBar: const Header(),
@@ -92,20 +94,22 @@ class SearchScreen extends ConsumerWidget {
 
           // 推荐歌单
           BlockContainer(
-            blockName: '推荐歌单',
+            blockName: rcmdPlaylist.blockName,
+            buttonText: rcmdPlaylist.buttonText,
             onButtonClick: () {
-              print('点击了更多按钮');
+              print('点击了${rcmdPlaylist.buttonText}按钮');
             },
-            children: List.generate(
-              10,
-              (index) => const SlidePlaylist(
-                title: '『纯电音游戏向』戴上耳机，任由电音轰炸★',
-                imgUrl:
-                    'http://p1.music.126.net/XSbvzcNE5zYFwCEDUgllTQ==/3440371886310532.jpg',
-                playCount: '0.7亿',
-                creativeType: 'scroll_playlist',
-              ),
-            ).toList(),
+            children: rcmdPlaylist.creatives
+                .map((playlist) => SlidePlaylist(
+                      imgUrl: playlist.imageUrl,
+                      title: playlist.title,
+                      playCount: playlist.playCount,
+                      creativeType: playlist.creativeType,
+                      press: () {
+                        print('点击了${playlist.title}歌单');
+                      },
+                    ))
+                .toList(),
           ),
         ],
       ),
