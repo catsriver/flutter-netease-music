@@ -11,12 +11,14 @@ class BlockContainer extends StatelessWidget {
     this.buttonText,
     this.onButtonClick,
     required this.children,
+    this.top = true,
   }) : super(key: key);
 
   final String blockName;
   final String? buttonText;
   final VoidCallback? onButtonClick;
   final List<Widget> children;
+  final bool top;
 
   Widget get prototypeItem {
     if (children.isNotEmpty) {
@@ -28,6 +30,10 @@ class BlockContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(
+        top: top ? Dimens.vGapDp24 / 2 : 0,
+        bottom: Dimens.vGapDp24 / 2,
+      ),
       padding: EdgeInsets.symmetric(vertical: Dimens.vGapDp24),
       decoration: BoxDecoration(
         color: Colours.mainBgColor,

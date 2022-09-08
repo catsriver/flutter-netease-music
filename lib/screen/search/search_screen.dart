@@ -99,6 +99,7 @@ class SearchScreen extends ConsumerWidget {
           BlockContainer(
             blockName: rcmdPlaylist.blockName,
             buttonText: rcmdPlaylist.buttonText,
+            top: false,
             onButtonClick: () {
               print('点击了${rcmdPlaylist.buttonText}按钮');
             },
