@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../res/resources.dart';
+import '../res/resources.dart';
+import 'horizontal_list_view.dart';
 
 class BlockContainer extends StatelessWidget {
   const BlockContainer({
@@ -9,11 +10,20 @@ class BlockContainer extends StatelessWidget {
     required this.blockName,
     this.buttonText,
     this.onButtonClick,
+    required this.children,
   }) : super(key: key);
 
   final String blockName;
   final String? buttonText;
   final VoidCallback? onButtonClick;
+  final List<Widget> children;
+
+  Widget get prototypeItem {
+    if (children.isNotEmpty) {
+      return children.first;
+    }
+    return const SizedBox();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +90,10 @@ class BlockContainer extends StatelessWidget {
           Gaps.vGap15,
 
           // BlockScrollList
+          HorizontalListView(
+            prototypeItem: prototypeItem,
+            children: children,
+          ),
         ],
       ),
     );

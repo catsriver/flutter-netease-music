@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netease_cloud_music/screen/search/widgets/slide_playlist.dart';
 
 import '../../res/resources.dart';
 import '../../provider/search/ball_menu_provider.dart';
@@ -11,7 +12,7 @@ import 'widgets/header.dart';
 import 'widgets/body.dart';
 import 'widgets/banner_item.dart';
 import 'widgets/ball_menu_item.dart';
-import 'widgets/block_container.dart';
+import '../../widgets/block_container.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -95,6 +96,16 @@ class SearchScreen extends ConsumerWidget {
             onButtonClick: () {
               print('点击了更多按钮');
             },
+            children: List.generate(
+              10,
+              (index) => const SlidePlaylist(
+                title: '『纯电音游戏向』戴上耳机，任由电音轰炸★',
+                imgUrl:
+                    'http://p1.music.126.net/XSbvzcNE5zYFwCEDUgllTQ==/3440371886310532.jpg',
+                playCount: '0.7亿',
+                creativeType: 'scroll_playlist',
+              ),
+            ).toList(),
           ),
         ],
       ),
