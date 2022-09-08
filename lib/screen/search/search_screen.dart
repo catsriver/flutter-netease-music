@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:netease_cloud_music/provider/search/playlist_rcmd_provider.dart';
 import 'package:netease_cloud_music/screen/search/widgets/slide_playlist.dart';
+import 'package:netease_cloud_music/screen/search/widgets/slide_songlist_align.dart';
 
 import '../../res/resources.dart';
 import '../../provider/search/ball_menu_provider.dart';
@@ -110,6 +111,42 @@ class SearchScreen extends ConsumerWidget {
                       },
                     ))
                 .toList(),
+          ),
+
+          // 风格推荐
+          const BlockContainer(
+            blockName: '为你精选的宝藏歌曲',
+            buttonText: '播放',
+            children: [
+              SlideSongListAlign(
+                resources: [
+                  {
+                    "title": "爱上你是一个错",
+                    "subTitle": "昨日十万播放",
+                    "subTitleType": "songRcmdTag",
+                    "imageUrl":
+                        "http://p1.music.126.net/ME4BfW2fNSBTFqBXi3D5Ag==/109951167855743116.jpg",
+                    "artists": ['张小伙', '粥粥zxr'],
+                  },
+                  {
+                    "title": "梦到你",
+                    "subTitle": "昨日十万播放",
+                    "subTitleType": "",
+                    "imageUrl":
+                        "http://p1.music.126.net/cHQMbaBlPgFARNTAgvXTxg==/109951167839805762.jpg",
+                    "artists": ['沙一汀EL'],
+                  },
+                  {
+                    "title": "I Never Told You",
+                    "subTitle": "昨日上万播放",
+                    "subTitleType": "songRcmdTag",
+                    "imageUrl":
+                        "http://p1.music.126.net/oyvdDn7wEDocQWogEZavUg==/109951167721170782.jpg",
+                    "artists": ['ICE'],
+                  },
+                ],
+              ),
+            ],
           ),
         ],
       ),
