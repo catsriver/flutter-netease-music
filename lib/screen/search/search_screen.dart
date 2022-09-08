@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:netease_cloud_music/provider/search/playlist_mgc_provider.dart';
-import 'package:netease_cloud_music/provider/search/playlist_rcmd_provider.dart';
-import 'package:netease_cloud_music/screen/search/widgets/slide_playlist.dart';
-import 'package:netease_cloud_music/screen/search/widgets/slide_songlist_align.dart';
 
+import '../../provider/search/playlist_mgc_provider.dart';
+import '../../provider/search/playlist_rcmd_provider.dart';
 import '../../provider/search/style_rcmd_provider.dart';
 import '../../res/resources.dart';
 import '../../provider/search/ball_menu_provider.dart';
@@ -17,6 +15,8 @@ import 'widgets/body.dart';
 import 'widgets/banner_item.dart';
 import 'widgets/ball_menu_item.dart';
 import '../../widgets/block_container.dart';
+import 'widgets/slide_playlist.dart';
+import 'widgets/slide_songlist_align.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({Key? key}) : super(key: key);
