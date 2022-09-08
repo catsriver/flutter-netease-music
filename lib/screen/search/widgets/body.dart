@@ -10,11 +10,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.indigo,
-      child: ListView(
-        children: children,
-      ),
+    return ListView(
+      children: children,
     );
   }
 }

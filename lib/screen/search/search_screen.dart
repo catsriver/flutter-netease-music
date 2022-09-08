@@ -84,7 +84,8 @@ class SearchScreen extends ConsumerWidget {
             ),
           ),
 
-          //
+          //分割线
+          Gaps.line,
         ],
       ),
     );
