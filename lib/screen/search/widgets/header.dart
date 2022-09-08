@@ -56,6 +56,18 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
         )
       ],
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFFDDDDDD),
+              Color(0xFFEBEBEB),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      ),
     );
   }
 
