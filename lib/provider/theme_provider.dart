@@ -15,10 +15,13 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         elevation: 0,
+        backgroundColor: Colours.mainBgColor,
         selectedItemColor: Colours.fontColor2,
         unselectedItemColor: Colours.fontColor4,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: TextStyles.textSize12,
+        unselectedLabelStyle: TextStyles.textSize12,
       ),
       colorScheme: ColorScheme.fromSwatch().copyWith(
         primary: Colours.primaryColor,

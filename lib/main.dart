@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'provider/theme_provider.dart';
+import 'screen/home/home_screen.dart';
 
 void main() {
   runApp(
@@ -22,15 +23,7 @@ class App extends ConsumerWidget {
       title: '网易云音乐',
       debugShowCheckedModeBanner: false,
       theme: theme.getTheme(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('网易云音乐'),
-          leading: const Icon(Icons.bar_chart),
-          actions: const [
-            Icon(Icons.camera_alt),
-          ],
-        ),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
