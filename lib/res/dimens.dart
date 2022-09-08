@@ -1,11 +1,14 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class Dimens {
-  static const double fontSp12 = 12.0;
-  static const double fontSp14 = 14.0;
+  static final double fontSp12 = 12.sp;
+  static final double fontSp14 = 14.sp;
+  static final double fontSp22 = 22.sp;
 
   // 水平间隔
-  static const double hGapDp7 = 7.0;
-  static const double hGapDp24 = 24.0;
+  static final double hGapDp7 = 7.w;
+  static final double hGapDp24 = 24.w;
 
   // 垂直间隔
-  static const double vGapDp24 = 24.0;
+  static final double vGapDp24 = 24.h;
 }

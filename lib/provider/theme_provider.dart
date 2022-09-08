@@ -13,20 +13,26 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
         centerTitle: true,
         foregroundColor: Colours.fontColor1,
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: Colours.mainBgColor,
         selectedItemColor: Colours.fontColor2,
         unselectedItemColor: Colours.fontColor4,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: TextStyles.textSize12,
-        unselectedLabelStyle: TextStyles.textSize12,
+        selectedLabelStyle: TextStyles.textSize14,
+        unselectedLabelStyle: TextStyles.textSize14,
       ),
       colorScheme: ColorScheme.fromSwatch().copyWith(
         primary: Colours.primaryColor,
       ),
       scaffoldBackgroundColor: Colours.secondaryBgColor,
+      textTheme: TextTheme(
+        titleLarge: TextStyle(
+          fontSize: Dimens.fontSp22,
+          color: Colours.fontColor1,
+        ),
+      ),
     );
   }
 }

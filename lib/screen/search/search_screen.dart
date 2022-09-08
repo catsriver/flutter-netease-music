@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:netease_cloud_music/res/gaps.dart';
 
@@ -17,17 +18,17 @@ class SearchScreen extends StatelessWidget {
         ),
         titleSpacing: 0,
         title: Container(
-          height: 53.0,
+          height: 53.h,
           decoration: BoxDecoration(
             color: const Color(0xFFFDFDFD),
-            borderRadius: BorderRadius.circular(53.0),
+            borderRadius: BorderRadius.circular(53.h),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const FaIcon(
+              FaIcon(
                 FontAwesomeIcons.magnifyingGlass,
-                size: 22.0,
+                size: 22.h,
                 color: Colours.fontColor3,
               ),
               Gaps.hGap7,
