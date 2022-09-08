@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/svg_icon.dart';
+
 class AccountScreen extends StatelessWidget {
   const AccountScreen({Key? key}) : super(key: key);
 
@@ -10,14 +12,7 @@ class AccountScreen extends StatelessWidget {
         title: const Text('我的'),
       ),
       body: const Center(
-        child: Text(
-          '垂直居中x',
-          style: TextStyle(
-            backgroundColor: Colors.pink,
-            fontSize: 22.0,
-            height: 2.0,
-          ),
-        ),
+        child: SvgIcon(SvgIcons.alarm),
       ),
     );
   }
