@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netease_cloud_music/provider/search/playlist_mgc_provider.dart';
 import 'package:netease_cloud_music/provider/search/playlist_rcmd_provider.dart';
 import 'package:netease_cloud_music/screen/search/widgets/slide_playlist.dart';
 import 'package:netease_cloud_music/screen/search/widgets/slide_songlist_align.dart';
@@ -26,6 +27,7 @@ class SearchScreen extends ConsumerWidget {
     final menus = ref.watch(ballMenuProvider);
     final rcmdPlaylist = ref.watch(playlistRcmdProvider);
     final rcmdStyleSonglist = ref.watch(styleRcmdProvider);
+    final mgcPlaylist = ref.watch(playlistMgcProvider);
 
     return Scaffold(
       appBar: const Header(),
@@ -126,6 +128,23 @@ class SearchScreen extends ConsumerWidget {
                 )
                 .toList(),
           ),
+
+          // 雷达歌单
+          BlockContainer(
+            blockName: mgcPlaylist.blockName,
+            buttonText: mgcPlaylist.buttonText,
+            children: mgcPlaylist.creatives
+                .map((playlist) => SlidePlaylist(
+                      imgUrl: playlist.imageUrl,
+                      title: playlist.title,
+                      playCount: playlist.playCount,
+                      creativeType: playlist.creativeType,
+                      press: () {
+                        print('点击了${playlist.title}歌单');
+                      },
+                    ))
+                .toList(),
+          )
         ],
       ),
     );
