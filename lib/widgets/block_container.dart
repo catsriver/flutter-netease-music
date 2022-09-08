@@ -37,7 +37,12 @@ class BlockContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: Dimens.vGapDp24),
       decoration: BoxDecoration(
         color: Colours.mainBgColor,
-        borderRadius: BorderRadius.circular(Dimens.radiusDp12),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(top ? Dimens.radiusDp12 : 0),
+          topRight: Radius.circular(top ? Dimens.radiusDp12 : 0),
+          bottomLeft: Radius.circular(Dimens.radiusDp12),
+          bottomRight: Radius.circular(Dimens.radiusDp12),
+        ),
       ),
       child: Column(
         children: [
