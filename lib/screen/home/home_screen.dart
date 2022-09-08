@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:netease_cloud_music/screen/account/account_screen.dart';
-import 'package:netease_cloud_music/screen/bodcast/bodcast_screen.dart';
-import 'package:netease_cloud_music/screen/community/community_screen.dart';
-import 'package:netease_cloud_music/screen/search/search_screen.dart';
+
+import '../account/account_screen.dart';
+import '../bodcast/bodcast_screen.dart';
+import '../community/community_screen.dart';
+import '../search/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({

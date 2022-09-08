@@ -9,6 +9,16 @@ class AccountScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('我的'),
       ),
+      body: const Center(
+        child: Text(
+          '垂直居中x',
+          style: TextStyle(
+            backgroundColor: Colors.pink,
+            fontSize: 22.0,
+            height: 2.0,
+          ),
+        ),
+      ),
     );
   }
 }

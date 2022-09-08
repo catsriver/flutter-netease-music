@@ -10,6 +10,7 @@ class Colours {
   static const fontColor2 = Color(0xFFF53F3F);
   static const fontColor3 = Color(0xFF808080);
   static const fontColor4 = Color(0xFF999999);
+  static const fontColorWihite = Color(0xFFFFFFFF);
 
   static const dividerColor = Color(0xFFE5E5E5);
 
