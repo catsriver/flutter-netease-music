@@ -6,6 +6,9 @@ import '../bodcast/bodcast_screen.dart';
 import '../community/community_screen.dart';
 import '../search/search_screen.dart';
 
+import '../../util/keys.dart';
+import 'widgets/app_drawer.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     Key? key,
@@ -22,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: homeScaffoldKey,
       body: PageView(
         controller: _controller,
         onPageChanged: (int index) {
@@ -78,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      drawer: const AppDrawer(),
     );
   }
 }
