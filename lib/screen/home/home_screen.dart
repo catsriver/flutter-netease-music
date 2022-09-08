@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:netease_cloud_music/screen/account/account_screen.dart';
 import 'package:netease_cloud_music/screen/bodcast/bodcast_screen.dart';
 import 'package:netease_cloud_music/screen/community/community_screen.dart';
@@ -50,22 +51,22 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(
             label: '发现',
-            icon: Icon(Icons.home),
+            icon: FaIcon(FontAwesomeIcons.compactDisc),
             tooltip: '',
           ),
           BottomNavigationBarItem(
             label: '播客',
-            icon: Icon(Icons.broadcast_on_home_sharp),
+            icon: FaIcon(FontAwesomeIcons.radio),
             tooltip: '',
           ),
           BottomNavigationBarItem(
             label: '社区',
-            icon: Icon(Icons.chat_bubble_outline),
+            icon: FaIcon(FontAwesomeIcons.bomb),
             tooltip: '',
           ),
           BottomNavigationBarItem(
             label: '我的',
-            icon: Icon(Icons.person),
+            icon: FaIcon(FontAwesomeIcons.music),
             tooltip: '',
           ),
         ],
