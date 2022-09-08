@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netease_cloud_music/screen/search/widgets/ball_menu_item.dart';
 
 import '../../provider/search/banner_provider.dart';
 import '../../res/resources.dart';
@@ -55,6 +56,28 @@ class SearchScreen extends ConsumerWidget {
                     activeSize: 10.h,
                     color: const Color(0xFFCCCCCC),
                     activeColor: const Color(0xFFFCFCFC),
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          // 圆形图标入口列表
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Container(
+              color: Colours.mainBgColor,
+              padding: EdgeInsets.symmetric(
+                horizontal: Dimens.hGapDp24 / 2,
+                vertical: Dimens.vGapDp30,
+              ),
+              child: Row(
+                children: List.generate(
+                  10,
+                  (index) => const BallMenuItem(
+                    name: '每日推荐',
+                    iconUrl:
+                        'http://p1.music.126.net/4DpSgAVpJny4Ewf-Xw_WQQ==/109951163986641971.jpg',
                   ),
                 ),
               ),

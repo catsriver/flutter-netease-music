@@ -15,6 +15,7 @@ class Dimens {
   static final double vGapDp6 = 6.h;
   static final double vGapDp10 = 10.h;
   static final double vGapDp24 = 24.h;
+  static final double vGapDp30 = 30.h;
 
   // 圆角
   static final double radiusDp12 = 12.h;
