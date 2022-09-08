@@ -13,6 +13,7 @@ class Dimens {
 
   // 垂直间隔
   static final double vGapDp6 = 6.h;
+  static final double vGapDp10 = 10.h;
   static final double vGapDp24 = 24.h;
 
   // 圆角

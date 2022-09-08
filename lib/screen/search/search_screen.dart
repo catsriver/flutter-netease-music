@@ -1,6 +1,8 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netease_cloud_music/provider/search/banner_provider.dart';
 
 import '../../res/resources.dart';
 import 'widgets/banner_item.dart';
@@ -12,6 +14,8 @@ class SearchScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final banners = ref.watch(bannerProvider);
+
     return Scaffold(
       appBar: const Header(),
       body: Body(
@@ -25,11 +29,23 @@ class SearchScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(Dimens.radiusDp12),
             ),
             clipBehavior: Clip.antiAlias,
-            child: const BannerItem(
-              imgUrl:
-                  'http://p1.music.126.net/BcZXvoTKen7fPMDXezzScQ==/109951167853780577.jpg',
-              title: '广告',
-              titleColor: Colors.blue,
+            child: Swiper(
+              autoplay: true,
+              itemCount: banners.length,
+              itemBuilder: (_, index) => BannerItem(
+                imgUrl: banners[index].pic,
+                title: banners[index].typeTitle,
+                titleColor: banners[index].titleBgColor,
+              ),
+              pagination: SwiperPagination(
+                margin: EdgeInsets.only(bottom: Dimens.vGapDp10),
+                builder: DotSwiperPaginationBuilder(
+                  size: 10.h,
+                  activeSize: 10.h,
+                  color: const Color(0xFFCCCCCC),
+                  activeColor: const Color(0xFFFCFCFC),
+                ),
+              ),
             ),
           ),
         ],
