@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:netease_cloud_music/provider/search/ball_menu_provider.dart';
-import 'package:netease_cloud_music/screen/search/widgets/ball_menu_item.dart';
 
-import '../../provider/search/banner_provider.dart';
 import '../../res/resources.dart';
-import 'widgets/banner_item.dart';
-import 'widgets/body.dart';
+import '../../provider/search/ball_menu_provider.dart';
+import '../../provider/search/banner_provider.dart';
+
 import 'widgets/header.dart';
+import 'widgets/body.dart';
+import 'widgets/banner_item.dart';
+import 'widgets/ball_menu_item.dart';
+import 'widgets/block_container.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -86,6 +88,14 @@ class SearchScreen extends ConsumerWidget {
 
           //分割线
           Gaps.line,
+
+          // 推荐歌单
+          BlockContainer(
+            blockName: '推荐歌单',
+            onButtonClick: () {
+              print('点击了更多按钮');
+            },
+          ),
         ],
       ),
     );
