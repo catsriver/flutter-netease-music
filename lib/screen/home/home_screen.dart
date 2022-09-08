@@ -28,16 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       key: homeScaffoldKey,
       body: PageView(
         controller: _controller,
-        onPageChanged: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-          _controller.animateToPage(
-            index,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.ease,
-          );
-        },
+        onPageChanged: _animateToPage,
         children: const [
           SearchScreen(),
           BodcastScreen(),
@@ -45,44 +36,61 @@ class _HomeScreenState extends State<HomeScreen> {
           AccountScreen(),
         ],
       ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-        ),
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (int index) {
-            setState(() {
-              _currentIndex = index;
-            });
-            _controller.jumpToPage(index);
-          },
-          items: const [
-            BottomNavigationBarItem(
-              label: '发现',
-              icon: FaIcon(FontAwesomeIcons.compactDisc),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              label: '播客',
-              icon: FaIcon(FontAwesomeIcons.radio),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              label: '社区',
-              icon: FaIcon(FontAwesomeIcons.bomb),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              label: '我的',
-              icon: FaIcon(FontAwesomeIcons.music),
-              tooltip: '',
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: _buildBottomNavBar(context),
       drawer: const AppDrawer(),
+    );
+  }
+
+  Theme _buildBottomNavBar(BuildContext context) {
+    return Theme(
+      data: Theme.of(context).copyWith(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+      ),
+      child: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: _jumpToPage,
+        items: const [
+          BottomNavigationBarItem(
+            label: '发现',
+            icon: FaIcon(FontAwesomeIcons.compactDisc),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            label: '播客',
+            icon: FaIcon(FontAwesomeIcons.radio),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            label: '社区',
+            icon: FaIcon(FontAwesomeIcons.bomb),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            label: '我的',
+            icon: FaIcon(FontAwesomeIcons.music),
+            tooltip: '',
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _jumpToPage(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    _controller.jumpToPage(index);
+  }
+
+  void _animateToPage(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    _controller.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.ease,
     );
   }
 }
