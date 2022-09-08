@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../res/resources.dart';
-import 'slide_songlist.dart';
+import '../../../models/slide_songlist.dart' as songlist_models;
+import './slide_songlist.dart';
 
 class SlideSongListAlign extends StatelessWidget {
   const SlideSongListAlign({
@@ -9,7 +10,7 @@ class SlideSongListAlign extends StatelessWidget {
     required this.resources,
   }) : super(key: key);
 
-  final List<Map<String, dynamic>> resources;
+  final List<songlist_models.Song> resources;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +20,12 @@ class SlideSongListAlign extends StatelessWidget {
         children: [
           for (int i = 0; i < resources.length; i++)
             SlideSongList(
-              imageUrl: resources[i]['imageUrl'],
-              title: resources[i]['title'],
-              subTitle: resources[i]['subTitle'],
-              artists: resources[i]['artists'],
+              imageUrl: resources[i].imgUrl,
+              title: resources[i].title,
+              subTitle: resources[i].subTitle,
+              artists: resources[i].artists,
               bottom: i == resources.length - 1 ? false : true,
-              subTitleType: resources[i]['subTitleType'],
+              subTitleType: resources[i].subTitleType,
             ),
         ],
       ),
