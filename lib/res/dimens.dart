@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Dimens {
+  static final double fontSp10 = 10.sp;
   static final double fontSp12 = 12.sp;
   static final double fontSp14 = 14.sp;
   static final double fontSp16 = 16.sp;
@@ -26,4 +27,5 @@ class Dimens {
   // 圆角
   static final double radiusDp4 = 4.h;
   static final double radiusDp12 = 12.h;
+  static final double radiusDp24 = 24.h;
 }
