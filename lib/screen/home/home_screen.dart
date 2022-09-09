@@ -7,7 +7,7 @@ import '../community/community_screen.dart';
 import '../search/search_screen.dart';
 
 import '../../util/keys.dart';
-import 'widgets/app_drawer.dart';
+import '../../widgets/app_drawer/app_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({

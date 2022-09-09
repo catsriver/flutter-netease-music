@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:netease_cloud_music/widgets/svg_icon.dart';
 
-import '../../../res/resources.dart';
+import '../../res/resources.dart';
+import '../common/svg_icon.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({

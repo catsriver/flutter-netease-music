@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/svg_icon.dart';
+import '../../widgets/common/svg_icon.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({Key? key}) : super(key: key);
