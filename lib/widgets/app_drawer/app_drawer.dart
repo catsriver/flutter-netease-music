@@ -163,6 +163,7 @@ class AppDrawer extends StatelessWidget {
                     CategoryItem(
                       icon: SvgIcons.mail,
                       title: '我的消息',
+                      bottom: true,
                     ),
                     CategoryItem(
                       icon: SvgIcons.archor,
