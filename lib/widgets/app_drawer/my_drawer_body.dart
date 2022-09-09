@@ -16,7 +16,12 @@ class MyDrawerBody extends StatelessWidget {
       child: Container(
         color: Colours.secondaryBgColor,
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: Dimens.hGapDp24),
+          padding: EdgeInsets.fromLTRB(
+            Dimens.hGapDp24,
+            Dimens.hGapDp24 / 2,
+            Dimens.hGapDp24,
+            Dimens.hGapDp24,
+          ),
           children: children,
         ),
       ),

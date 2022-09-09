@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:netease_cloud_music/widgets/app_drawer/category_container.dart';
 import 'package:netease_cloud_music/widgets/common/svg_icon.dart';
 
 import '../../res/resources.dart';
+import '../common/rounded_text_button.dart';
+import 'category_item.dart';
 import 'my_drawer_body.dart';
 import 'my_drawer_header.dart';
 
@@ -152,6 +155,137 @@ class AppDrawer extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
+
+                // 快捷入口
+                const CategoryContainer(
+                  children: [
+                    CategoryItem(
+                      icon: SvgIcons.mail,
+                      title: '我的消息',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.archor,
+                      title: '云贝中心',
+                    ),
+                  ],
+                ),
+
+                // 音乐服务
+                const CategoryContainer(
+                  headerTitle: '音乐服务',
+                  children: [
+                    CategoryItem(
+                      icon: SvgIcons.bookmarks,
+                      title: '云村有票',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.shoppingCart,
+                      title: '商城',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.ghost,
+                      title: '多多西西口袋',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.activity,
+                      title: 'Beat交易平台',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.brandDiscord,
+                      title: '游戏专区',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.bellRinging2,
+                      title: '口袋彩铃',
+                    ),
+                  ],
+                ),
+
+                // 其他
+                const CategoryContainer(
+                  headerTitle: '其他',
+                  children: [
+                    CategoryItem(
+                      icon: SvgIcons.settings,
+                      title: '设置',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.moon,
+                      title: '深色模式',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.clock,
+                      title: '定时关闭',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.shirt,
+                      title: '个性装扮',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.headphones,
+                      title: '边听边存',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.deviceDesktopAnalytics,
+                      title: '在线听歌免流量',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.ban,
+                      title: '音乐黑名单',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.shieldCheck,
+                      title: '青少年模式',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.alarm,
+                      title: '音乐闹钟',
+                    ),
+                  ],
+                ),
+
+                // 用户
+                const CategoryContainer(
+                  children: [
+                    CategoryItem(
+                      icon: SvgIcons.receipt,
+                      title: '我的订单',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.ticket,
+                      title: '优惠券',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.headset,
+                      title: '我的客服',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.share,
+                      title: '分享网易云音乐',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.certificate,
+                      title: '个人信息收集与使用清单',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.brandUbuntu,
+                      title: '个人信息第三方共享清单',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.shieldLock,
+                      title: '个人信息与隐私保护',
+                    ),
+                    CategoryItem(
+                      icon: SvgIcons.alertCircle,
+                      title: '关于',
+                    ),
+                  ],
+                ),
+
+                // 按钮
+                const RoundedTextButton(
+                  text: '关闭网易云音乐',
                 ),
               ],
             ),
