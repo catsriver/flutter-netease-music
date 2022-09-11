@@ -12,7 +12,7 @@ import '../../provider/search/ball_menu_provider.dart';
 import '../../provider/search/banner_provider.dart';
 
 import '../../widgets/common/rounded_search_box.dart';
-import 'widgets/header.dart';
+import '../../widgets/common/customAppBar.dart';
 import 'widgets/body.dart';
 import 'widgets/banner_item.dart';
 import 'widgets/ball_menu_item.dart';
