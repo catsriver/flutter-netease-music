@@ -12,6 +12,7 @@ class CategoryItem extends StatelessWidget {
     this.bottom = false,
     this.press,
     this.trailing = true,
+    this.switchValue,
   }) : super(key: key);
 
   final SvgIconData icon;
@@ -24,6 +25,9 @@ class CategoryItem extends StatelessWidget {
 
   /// 控制右侧 `>` 图标显示/隐藏，默认显示
   final bool trailing;
+
+  /// switch
+  final bool? switchValue;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +79,17 @@ class CategoryItem extends StatelessWidget {
 
                       // 中间内容
                       Expanded(
-                        child: Container(),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (switchValue != null)
+                              Switch(
+                                value: switchValue!,
+                                activeColor: const Color(0xFFF93B38),
+                                onChanged: (bool value) {},
+                              ),
+                          ],
+                        ),
                       ),
 
                       // 间距
