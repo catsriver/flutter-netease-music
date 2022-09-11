@@ -193,6 +193,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     CategoryItem(
                       icon: SvgIcons.shoppingCart,
                       title: '商城',
+                      imgUrl:
+                          'https://c-ssl.dtstatic.com/uploads/item/201304/24/20130424222243_jrBCs.thumb.400_0.jpeg_webp',
                     ),
                     CategoryItem(
                       icon: SvgIcons.ghost,

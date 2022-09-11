@@ -14,6 +14,7 @@ class CategoryItem extends StatelessWidget {
     this.trailing = true,
     this.switchValue,
     this.onSwitchChanged,
+    this.imgUrl,
   }) : super(key: key);
 
   final SvgIconData icon;
@@ -30,6 +31,9 @@ class CategoryItem extends StatelessWidget {
   /// switch
   final bool? switchValue;
   final ValueChanged<bool>? onSwitchChanged;
+
+  /// 商品图片
+  final String? imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +88,21 @@ class CategoryItem extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
+                            // 商品图片
+                            if (imgUrl != null && imgUrl != '')
+                              Container(
+                                width: 30.w,
+                                height: 30.h,
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: Dimens.hGapDp10),
+                                child: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                    imgUrl!,
+                                  ),
+                                ),
+                              ),
+
+                            // 开关
                             if (switchValue != null)
                               Switch(
                                 value: switchValue!,
