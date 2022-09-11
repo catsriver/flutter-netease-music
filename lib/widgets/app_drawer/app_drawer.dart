@@ -158,14 +158,17 @@ class AppDrawer extends StatelessWidget {
                 ),
 
                 // 快捷入口
-                const CategoryContainer(
+                CategoryContainer(
                   children: [
                     CategoryItem(
                       icon: SvgIcons.mail,
                       title: '我的消息',
                       bottom: true,
+                      press: () {
+                        print('我的消息');
+                      },
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.archor,
                       title: '云贝中心',
                     ),
@@ -285,8 +288,14 @@ class AppDrawer extends StatelessWidget {
                 ),
 
                 // 按钮
-                const RoundedTextButton(
-                  text: '关闭网易云音乐',
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: Dimens.hGapDp24 / 2),
+                  child: RoundedTextButton(
+                    text: '关闭网易云音乐',
+                    press: () {
+                      print('关闭网易云音乐');
+                    },
+                  ),
                 ),
               ],
             ),

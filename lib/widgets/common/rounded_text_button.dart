@@ -7,25 +7,35 @@ class RoundedTextButton extends StatelessWidget {
   const RoundedTextButton({
     Key? key,
     required this.text,
+    required this.press,
   }) : super(key: key);
 
   final String text;
 
+  final VoidCallback press;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 75.h,
-      alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(vertical: Dimens.hGapDp24 / 2),
-      decoration: BoxDecoration(
-        color: Colours.mainBgColor,
-        borderRadius: BorderRadius.circular(Dimens.radiusDp12),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: Dimens.fontSp24,
-          color: Colours.fontColor2,
+    return Material(
+      color: Colours.mainBgColor,
+      borderRadius: BorderRadius.circular(Dimens.radiusDp12),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: press,
+        highlightColor: const Color(0xFFD2D2D2),
+        child: Container(
+          height: 75.h,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(Dimens.radiusDp12),
+          ),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: Dimens.fontSp24,
+              color: Colours.fontColor2,
+            ),
+          ),
         ),
       ),
     );

@@ -10,6 +10,7 @@ class CategoryItem extends StatelessWidget {
     required this.icon,
     required this.title,
     this.bottom = false,
+    this.press,
   }) : super(key: key);
 
   final SvgIconData icon;
@@ -18,71 +19,80 @@ class CategoryItem extends StatelessWidget {
   /// 控制底部边框线显示/隐藏，默认隐藏
   final bool bottom;
 
+  final VoidCallback? press;
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 75.h,
-      child: Row(
-        children: [
-          Gaps.hGap24,
-          Expanded(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                border: bottom
-                    ? Border(
-                        bottom:
-                            BorderSide(color: Colours.dividerColor, width: 1.h),
-                      )
-                    : null,
-              ),
-              child: Row(
-                children: [
-                  // 左侧icon、title
-                  Row(
+    return Material(
+      color: Colours.mainBgColor,
+      child: InkWell(
+        onTap: press,
+        highlightColor: const Color(0xFFD2D2D2),
+        child: SizedBox(
+          height: 75.h,
+          child: Row(
+            children: [
+              Gaps.hGap24,
+              Expanded(
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: bottom
+                        ? Border(
+                            bottom: BorderSide(
+                                color: Colours.dividerColor, width: 1.h),
+                          )
+                        : null,
+                  ),
+                  child: Row(
                     children: [
-                      SvgIcon(
-                        icon,
-                        size: 26.w,
-                        color: Colours.fontColor1,
+                      // 左侧icon、title
+                      Row(
+                        children: [
+                          SvgIcon(
+                            icon,
+                            size: 26.w,
+                            color: Colours.fontColor1,
+                          ),
+
+                          // 间距
+                          Gaps.hGap15,
+
+                          Text(
+                            title,
+                            style: TextStyle(
+                              fontSize: Dimens.fontSp22,
+                              color: Colours.fontColor1,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      Gaps.hGap30,
+
+                      // 中间内容
+                      Expanded(
+                        child: Container(),
                       ),
 
                       // 间距
-                      Gaps.hGap15,
+                      Gaps.hGap5,
 
-                      Text(
-                        title,
-                        style: TextStyle(
-                          fontSize: Dimens.fontSp22,
-                          color: Colours.fontColor1,
-                        ),
+                      // 右侧icon
+                      SvgIcon(
+                        SvgIcons.chevronRight,
+                        size: 28.w,
+                        color: Colours.fontColor4,
                       ),
+
+                      // 间距
+                      Gaps.hGap5,
                     ],
                   ),
-
-                  Gaps.hGap30,
-
-                  // 中间内容
-                  Expanded(
-                    child: Container(),
-                  ),
-
-                  // 间距
-                  Gaps.hGap5,
-
-                  // 右侧icon
-                  SvgIcon(
-                    SvgIcons.chevronRight,
-                    size: 28.w,
-                    color: Colours.fontColor4,
-                  ),
-
-                  // 间距
-                  Gaps.hGap5,
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
