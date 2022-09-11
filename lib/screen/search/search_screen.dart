@@ -14,7 +14,7 @@ import 'widgets/header.dart';
 import 'widgets/body.dart';
 import 'widgets/banner_item.dart';
 import 'widgets/ball_menu_item.dart';
-import '../../widgets/block_container.dart';
+import '../../widgets/common/block_container.dart';
 import 'widgets/slide_playlist.dart';
 import 'widgets/slide_songlist_align.dart';
 

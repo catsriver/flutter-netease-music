@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../res/resources.dart';
+import '../../res/resources.dart';
 
 class HorizontalListView extends StatelessWidget {
   const HorizontalListView({

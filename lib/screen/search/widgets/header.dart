@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:netease_cloud_music/util/keys.dart';
 
 import '../../../res/resources.dart';
 
@@ -14,7 +15,9 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: IconButton(
         icon: const FaIcon(FontAwesomeIcons.bars),
-        onPressed: () {},
+        onPressed: () {
+          homeScaffoldKey.currentState!.openDrawer();
+        },
       ),
       titleSpacing: 0,
       title: Container(
