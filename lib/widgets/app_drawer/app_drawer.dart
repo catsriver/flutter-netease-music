@@ -9,10 +9,17 @@ import 'category_item.dart';
 import 'my_drawer_body.dart';
 import 'my_drawer_header.dart';
 
-class AppDrawer extends StatelessWidget {
+class AppDrawer extends StatefulWidget {
   const AppDrawer({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+  bool _switchValue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -207,44 +214,49 @@ class AppDrawer extends StatelessWidget {
                 ),
 
                 // 其他
-                const CategoryContainer(
+                CategoryContainer(
                   headerTitle: '其他',
                   children: [
                     CategoryItem(
                       icon: SvgIcons.settings,
                       title: '设置',
                       trailing: false,
-                      switchValue: false,
+                      switchValue: _switchValue,
+                      onSwitchChanged: (bool value) {
+                        setState(() {
+                          _switchValue = !_switchValue;
+                        });
+                      },
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.moon,
                       title: '深色模式',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.clock,
                       title: '定时关闭',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.shirt,
                       title: '个性装扮',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.headphones,
                       title: '边听边存',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.deviceDesktopAnalytics,
                       title: '在线听歌免流量',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.ban,
                       title: '音乐黑名单',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.shieldCheck,
                       title: '青少年模式',
                     ),
-                    CategoryItem(
+                    const CategoryItem(
                       icon: SvgIcons.alarm,
                       title: '音乐闹钟',
                     ),

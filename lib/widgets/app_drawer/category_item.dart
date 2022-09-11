@@ -13,6 +13,7 @@ class CategoryItem extends StatelessWidget {
     this.press,
     this.trailing = true,
     this.switchValue,
+    this.onSwitchChanged,
   }) : super(key: key);
 
   final SvgIconData icon;
@@ -28,6 +29,7 @@ class CategoryItem extends StatelessWidget {
 
   /// switch
   final bool? switchValue;
+  final ValueChanged<bool>? onSwitchChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +88,7 @@ class CategoryItem extends StatelessWidget {
                               Switch(
                                 value: switchValue!,
                                 activeColor: const Color(0xFFF93B38),
-                                onChanged: (bool value) {},
+                                onChanged: onSwitchChanged,
                               ),
                           ],
                         ),
