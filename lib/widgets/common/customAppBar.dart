@@ -9,11 +9,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leading,
     required this.middle,
     required this.trailing,
+    this.gradient = false,
   }) : super(key: key);
 
   final Widget? leading;
   final Widget middle;
   final Widget trailing;
+
+  /// 是否开启背景渐变, 默认关闭
+  final bool gradient;
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +34,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         trailing,
       ],
-      flexibleSpace: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFFDDDDDD),
-              Color(0xFFEBEBEB),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-      ),
+      flexibleSpace: gradient
+          ? Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFFDDDDDD),
+                    Color(0xFFEBEBEB),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+            )
+          : null,
     );
   }
 

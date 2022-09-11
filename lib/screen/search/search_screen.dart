@@ -33,6 +33,7 @@ class SearchScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: CustomAppBar(
+        gradient: true,
         middle: const RoundedSearchBox(
           title: '天外来物',
           subTitle: '薛之谦',
