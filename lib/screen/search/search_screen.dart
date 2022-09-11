@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../provider/search/playlist_mgc_provider.dart';
 import '../../provider/search/playlist_rcmd_provider.dart';
@@ -10,6 +11,7 @@ import '../../res/resources.dart';
 import '../../provider/search/ball_menu_provider.dart';
 import '../../provider/search/banner_provider.dart';
 
+import '../../widgets/common/rounded_search_box.dart';
 import 'widgets/header.dart';
 import 'widgets/body.dart';
 import 'widgets/banner_item.dart';
@@ -30,7 +32,16 @@ class SearchScreen extends ConsumerWidget {
     final mgcPlaylist = ref.watch(playlistMgcProvider);
 
     return Scaffold(
-      appBar: const Header(),
+      appBar: CustomAppBar(
+        middle: const RoundedSearchBox(
+          title: '天外来物',
+          subTitle: '薛之谦',
+        ),
+        trailing: IconButton(
+          icon: const FaIcon(FontAwesomeIcons.microphoneLines),
+          onPressed: () {},
+        ),
+      ),
       body: Body(
         children: [
           // Banner
