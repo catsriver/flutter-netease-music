@@ -46,21 +46,21 @@ class CategoryItem extends StatelessWidget {
       child: InkWell(
         onTap: press,
         highlightColor: const Color(0xFFD2D2D2),
-        child: SizedBox(
-          height: 75.h,
-          child: Row(
-            children: [
-              Gaps.hGap24,
-              Expanded(
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    border: bottom
-                        ? Border(
-                            bottom: BorderSide(
-                                color: Colours.dividerColor, width: 1.h),
-                          )
-                        : null,
-                  ),
+        child: Row(
+          children: [
+            Gaps.hGap24,
+            Expanded(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  border: bottom
+                      ? Border(
+                          bottom: BorderSide(
+                              color: Colours.dividerColor, width: 1.h),
+                        )
+                      : null,
+                ),
+                child: SizedBox(
+                  height: 75.h,
                   child: Row(
                     children: [
                       // 左侧icon、title
@@ -148,8 +148,8 @@ class CategoryItem extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
