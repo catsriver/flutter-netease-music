@@ -15,7 +15,7 @@ class CategoryItem extends StatelessWidget {
     this.switchValue,
     this.onSwitchChanged,
     this.imgUrl,
-    this.description,
+    this.subTitle,
   }) : super(key: key);
 
   final SvgIconData icon;
@@ -37,7 +37,7 @@ class CategoryItem extends StatelessWidget {
   final String? imgUrl;
 
   /// 商品描述
-  final String? description;
+  final String? subTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -93,10 +93,10 @@ class CategoryItem extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             // 商品描述
-                            if (description != null && description != '')
+                            if (subTitle != null && subTitle != '')
                               Expanded(
                                 child: Text(
-                                  description!,
+                                  subTitle!,
                                   style: TextStyle(
                                     fontSize: Dimens.fontSp16,
                                     color: Colours.fontColor4,
