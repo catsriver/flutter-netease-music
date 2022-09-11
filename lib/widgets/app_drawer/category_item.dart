@@ -11,6 +11,7 @@ class CategoryItem extends StatelessWidget {
     required this.title,
     this.bottom = false,
     this.press,
+    this.trailing = true,
   }) : super(key: key);
 
   final SvgIconData icon;
@@ -20,6 +21,9 @@ class CategoryItem extends StatelessWidget {
   final bool bottom;
 
   final VoidCallback? press;
+
+  /// 控制右侧 `>` 图标显示/隐藏，默认显示
+  final bool trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +82,12 @@ class CategoryItem extends StatelessWidget {
                       Gaps.hGap5,
 
                       // 右侧icon
-                      SvgIcon(
-                        SvgIcons.chevronRight,
-                        size: 28.w,
-                        color: Colours.fontColor4,
-                      ),
+                      if (trailing)
+                        SvgIcon(
+                          SvgIcons.chevronRight,
+                          size: 28.w,
+                          color: Colours.fontColor4,
+                        ),
 
                       // 间距
                       Gaps.hGap5,

@@ -213,6 +213,7 @@ class AppDrawer extends StatelessWidget {
                     CategoryItem(
                       icon: SvgIcons.settings,
                       title: '设置',
+                      trailing: false,
                     ),
                     CategoryItem(
                       icon: SvgIcons.moon,
