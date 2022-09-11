@@ -90,7 +90,7 @@ class CategoryItem extends StatelessWidget {
                         ),
 
                       // 间距
-                      Gaps.hGap5,
+                      Gaps.hGap10,
                     ],
                   ),
                 ),
