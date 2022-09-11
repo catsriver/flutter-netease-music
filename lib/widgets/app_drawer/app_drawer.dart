@@ -246,6 +246,7 @@ class _AppDrawerState extends State<AppDrawer> {
                     const CategoryItem(
                       icon: SvgIcons.headphones,
                       title: '边听边存',
+                      subTitle: '未开启',
                     ),
                     const CategoryItem(
                       icon: SvgIcons.deviceDesktopAnalytics,
@@ -258,6 +259,7 @@ class _AppDrawerState extends State<AppDrawer> {
                     const CategoryItem(
                       icon: SvgIcons.shieldCheck,
                       title: '青少年模式',
+                      subTitle: '未开启',
                     ),
                     const CategoryItem(
                       icon: SvgIcons.alarm,

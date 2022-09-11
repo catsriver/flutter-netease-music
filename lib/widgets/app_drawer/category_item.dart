@@ -95,14 +95,17 @@ class CategoryItem extends StatelessWidget {
                             // 商品描述
                             if (subTitle != null && subTitle != '')
                               Expanded(
-                                child: Text(
-                                  subTitle!,
-                                  style: TextStyle(
-                                    fontSize: Dimens.fontSp16,
-                                    color: Colours.fontColor4,
+                                child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    subTitle!,
+                                    style: TextStyle(
+                                      fontSize: Dimens.fontSp16,
+                                      color: Colours.fontColor4,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
 
