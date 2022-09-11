@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:netease_cloud_music/widgets/app_drawer/category_container.dart';
-import 'package:netease_cloud_music/widgets/common/svg_icon.dart';
 
 import '../../res/resources.dart';
 import '../common/rounded_text_button.dart';
+import '../common/svg_icon.dart';
+import 'category_container.dart';
 import 'category_item.dart';
 import 'my_drawer_body.dart';
 import 'my_drawer_header.dart';
