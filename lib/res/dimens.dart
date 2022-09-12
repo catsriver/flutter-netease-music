@@ -9,6 +9,7 @@ class Dimens {
   static final double fontSp22 = 22.sp;
   static final double fontSp24 = 24.sp;
   static final double fontSp26 = 26.sp;
+  static final double fontSp28 = 28.sp;
 
   // 水平间隔
   static final double hGapDp5 = 5.w;
