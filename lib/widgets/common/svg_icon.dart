@@ -105,4 +105,7 @@ class SvgIcons {
       SvgIconData('assets/icons/chevron-right-bold.svg');
 
   static const SvgIconData plus = SvgIconData('assets/icons/plus.svg');
+
+  static const SvgIconData heartbeat =
+      SvgIconData('assets/icons/heartbeat.svg');
 }
