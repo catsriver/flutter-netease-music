@@ -108,4 +108,7 @@ class SvgIcons {
 
   static const SvgIconData heartbeat =
       SvgIconData('assets/icons/heartbeat.svg');
+
+  static const SvgIconData heartSolid =
+      SvgIconData('assets/icons/heart-solid.svg');
 }
