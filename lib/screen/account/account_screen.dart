@@ -128,6 +128,87 @@ class AccountScreen extends StatelessWidget {
               ],
             ),
           ),
+
+          //我喜欢的音乐
+          RoundedContainer(
+            padding: EdgeInsets.all(Dimens.hGapDp24),
+            child: Row(
+              children: [
+                Container(
+                  width: 75.w,
+                  height: 75.w,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF9B9B9B),
+                    borderRadius: BorderRadius.circular(Dimens.radiusDp12),
+                  ),
+                  child: SvgIcon(
+                    SvgIcons.heartSolid,
+                    color: Colours.fontColorWihite,
+                    size: 36.h,
+                  ),
+                ),
+
+                // 间距
+                Gaps.hGap15,
+
+                //
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '我喜欢的音乐',
+                            style: TextStyle(
+                              fontSize: Dimens.fontSp22,
+                            ),
+                          ),
+                          Text(
+                            '0首',
+                            style: TextStyle(
+                              fontSize: Dimens.fontSp16,
+                              color: Colours.fontColor4,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Dimens.hGapDp10,
+                          vertical: Dimens.vGapDp6,
+                        ),
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40.h),
+                            side: BorderSide(
+                                color: Colours.borderColor, width: 1.h),
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            SvgIcon(
+                              SvgIcons.heartbeat,
+                              size: 26.h,
+                            ),
+                            Text(
+                              '心动模式',
+                              style: TextStyle(
+                                fontSize: Dimens.fontSp16,
+                                color: Colours.fontColor1,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
