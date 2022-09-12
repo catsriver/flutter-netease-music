@@ -103,4 +103,6 @@ class SvgIcons {
 
   static const SvgIconData chevronRightBold =
       SvgIconData('assets/icons/chevron-right-bold.svg');
+
+  static const SvgIconData plus = SvgIconData('assets/icons/plus.svg');
 }

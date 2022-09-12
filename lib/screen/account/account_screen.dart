@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../res/resources.dart';
 import '../../widgets/common/customAppBar.dart';
 import '../../widgets/common/svg_icon.dart';
+import 'widgets/block_container.dart';
+import 'widgets/list_item.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({Key? key}) : super(key: key);
@@ -22,15 +24,12 @@ class AccountScreen extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: Dimens.hGapDp24),
         children: [
-          Container(
+          // 用户头像/立即登陆
+          RoundedContainer(
             height: 130.h,
             margin: EdgeInsets.only(
               top: (Dimens.vGapDp24 / 2 + 105.w / 2),
               bottom: Dimens.vGapDp24 / 2,
-            ),
-            decoration: BoxDecoration(
-              color: Colours.mainBgColor,
-              borderRadius: BorderRadius.circular(Dimens.radiusDp12),
             ),
             child: Stack(
               alignment: AlignmentDirectional.topCenter,
@@ -66,6 +65,61 @@ class AccountScreen extends StatelessWidget {
                         ),
                         const SvgIcon(
                           SvgIcons.chevronRightBold,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // 音乐应用
+          RoundedContainer(
+            margin: EdgeInsets.symmetric(vertical: Dimens.hGapDp24),
+            padding: EdgeInsets.all(Dimens.vGapDp15),
+            child: Column(
+              children: [
+                // 音乐应用
+                GridView.builder(
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    childAspectRatio: 1 / 1.3,
+                  ),
+                  itemCount: 8,
+                  itemBuilder: (_, index) => ListItem(
+                    label: '最近播放',
+                    iconUrl:
+                        'http://p1.music.126.net/4DpSgAVpJny4Ewf-Xw_WQQ==/109951163986641971.jpg',
+                    press: () {
+                      print('最近播放');
+                    },
+                  ),
+                ),
+
+                Gaps.line,
+
+                // 添加音乐应用
+                GestureDetector(
+                  onTap: () {
+                    print('添加音乐应用');
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(top: Dimens.vGapDp15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgIcon(
+                          SvgIcons.plus,
+                          color: Colours.fontColor4,
+                          size: 30.h,
+                        ),
+                        const Text(
+                          '音乐应用',
+                          style: TextStyle(
+                            color: Colours.fontColor4,
+                          ),
                         ),
                       ],
                     ),
