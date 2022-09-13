@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:netease_cloud_music/screen/play_music/play_music_screen.dart';
 
 import 'provider/theme_provider.dart';
 import 'screen/home/home_screen.dart';
@@ -21,14 +22,16 @@ class App extends ConsumerWidget {
     final theme = ref.read(themeProvider.notifier);
 
     return ScreenUtilInit(
-        designSize: const Size(540, 1200), // 一加8T
-        builder: (_, __) {
-          return MaterialApp(
-            title: '网易云音乐',
-            debugShowCheckedModeBanner: false,
-            theme: theme.getTheme(),
-            home: const HomeScreen(),
-          );
-        });
+      designSize: const Size(540, 1200), // 一加8T
+      builder: (_, __) {
+        return MaterialApp(
+          title: '网易云音乐',
+          debugShowCheckedModeBanner: false,
+          theme: theme.getTheme(),
+          // home: const HomeScreen(),
+          home: const PlayMusicScreen(),
+        );
+      },
+    );
   }
 }

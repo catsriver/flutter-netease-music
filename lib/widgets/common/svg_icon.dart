@@ -111,4 +111,36 @@ class SvgIcons {
 
   static const SvgIconData heartSolid =
       SvgIconData('assets/icons/heart-solid.svg');
+
+  static const SvgIconData heart = SvgIconData('assets/icons/heart.svg');
+
+  static const SvgIconData cloudDownload =
+      SvgIconData('assets/icons/cloud-download.svg');
+
+  static const SvgIconData messageCircle =
+      SvgIconData('assets/icons/message-circle.svg');
+
+  static const SvgIconData dotsVertical =
+      SvgIconData('assets/icons/dots-vertical.svg');
+
+  static const SvgIconData discover = SvgIconData('assets/icons/discover.svg');
+
+  static const SvgIconData playerPause =
+      SvgIconData('assets/icons/player-pause.svg');
+
+  static const SvgIconData playerPlay =
+      SvgIconData('assets/icons/player-play.svg');
+
+  static const SvgIconData playerSkipBack =
+      SvgIconData('assets/icons/player-skip-back.svg');
+
+  static const SvgIconData playerSkipForward =
+      SvgIconData('assets/icons/player-skip-forward.svg');
+
+  static const SvgIconData repeat = SvgIconData('assets/icons/repeat.svg');
+
+  static const SvgIconData repeatOne =
+      SvgIconData('assets/icons/repeatOne.svg');
+
+  static const SvgIconData playlist = SvgIconData('assets/icons/playlist.svg');
 }
