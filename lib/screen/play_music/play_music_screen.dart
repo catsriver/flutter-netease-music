@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -131,26 +132,70 @@ class PlayMusicScreen extends StatelessWidget {
                           onPressed: () {},
                         ),
                         IconButton(
-                          icon: SvgIcon(
-                            SvgIcons.discover,
-                            size: 36.w,
-                            color: Colours.fontColorWihite,
+                          icon: Badge(
+                            elevation: 0,
+                            badgeColor: Colors.transparent,
+                            padding: EdgeInsets.zero,
+                            badgeContent: Text(
+                              '77',
+                              style: TextStyle(
+                                fontSize: Dimens.fontSp14,
+                                color: Colours.fontColorWihite,
+                              ),
+                            ),
+                            child: SvgIcon(
+                              SvgIcons.discover,
+                              size: 36.w,
+                              color: Colours.fontColorWihite,
+                            ),
                           ),
                           onPressed: () {},
                         ),
                         IconButton(
-                          icon: SvgIcon(
-                            SvgIcons.messageCircle,
-                            size: 36.w,
-                            color: Colours.fontColorWihite,
+                          icon: Badge(
+                            elevation: 0,
+                            badgeColor: Colors.transparent,
+                            padding: EdgeInsets.zero,
+                            badgeContent: Text(
+                              '1w+',
+                              style: TextStyle(
+                                fontSize: Dimens.fontSp14,
+                                color: Colours.fontColorWihite,
+                              ),
+                            ),
+                            child: SvgIcon(
+                              SvgIcons.messageCircle,
+                              size: 36.w,
+                              color: Colours.fontColorWihite,
+                            ),
                           ),
                           onPressed: () {},
                         ),
                         IconButton(
-                          icon: SvgIcon(
-                            SvgIcons.dotsVertical,
-                            size: 36.w,
-                            color: Colours.fontColorWihite,
+                          icon: Badge(
+                            badgeColor: Colors.transparent,
+                            padding: EdgeInsets.zero,
+                            badgeContent: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 2.w),
+                              decoration: BoxDecoration(
+                                color: Colours.fontColor2,
+                                borderRadius: BorderRadius.circular(
+                                  Dimens.radiusDp12,
+                                ),
+                              ),
+                              child: Text(
+                                '倍速',
+                                style: TextStyle(
+                                  fontSize: Dimens.fontSp10,
+                                  color: Colours.fontColorWihite,
+                                ),
+                              ),
+                            ),
+                            child: SvgIcon(
+                              SvgIcons.dotsVertical,
+                              size: 36.w,
+                              color: Colours.fontColorWihite,
+                            ),
                           ),
                           onPressed: () {},
                         ),
