@@ -74,32 +74,147 @@ class PlayMusicScreen extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  alignment: Alignment.center,
-                  child: Container(
-                    width: 408.w,
-                    height: 408.w,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(408.w),
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/disk.png',
-                          fit: BoxFit.cover,
-                        ),
-                        SizedBox(
-                          width: 266.w,
-                          height: 266.w,
-                          child: const CircleAvatar(
-                            backgroundImage: NetworkImage(
-                              'http://p4.music.126.net/SWDOrvO3f6L8Q1xGPTbb6w==/109951163102543599.jpg',
+                  color: Colors.indigo,
+                  child: Stack(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Spacer(flex: 3),
+
+                          Container(
+                            width: 408.w,
+                            height: 408.w,
+                            decoration: BoxDecoration(
+                              color: Colors.black12,
+                              borderRadius: BorderRadius.circular(408.w),
+                            ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/disk.png',
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(
+                                  width: 266.w,
+                                  height: 266.w,
+                                  child: const CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                      'http://p4.music.126.net/SWDOrvO3f6L8Q1xGPTbb6w==/109951163102543599.jpg',
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
+
+                          const Spacer(flex: 5),
+
+                          // 按钮
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              IconButton(
+                                icon: SvgIcon(
+                                  SvgIcons.heart,
+                                  color: Colours.fontColorWihite,
+                                  size: 36.w,
+                                ),
+                                onPressed: () {},
+                              ),
+                              IconButton(
+                                icon: SvgIcon(
+                                  SvgIcons.cloudDownload,
+                                  size: 36.w,
+                                  color: Colours.fontColorWihite,
+                                ),
+                                onPressed: () {},
+                              ),
+                              IconButton(
+                                icon: Badge(
+                                  elevation: 0,
+                                  badgeColor: Colors.transparent,
+                                  padding: EdgeInsets.zero,
+                                  badgeContent: Text(
+                                    '77',
+                                    style: TextStyle(
+                                      fontSize: Dimens.fontSp14,
+                                      color: Colours.fontColorWihite,
+                                    ),
+                                  ),
+                                  child: SvgIcon(
+                                    SvgIcons.discover,
+                                    size: 36.w,
+                                    color: Colours.fontColorWihite,
+                                  ),
+                                ),
+                                onPressed: () {},
+                              ),
+                              IconButton(
+                                icon: Badge(
+                                  elevation: 0,
+                                  badgeColor: Colors.transparent,
+                                  padding: EdgeInsets.zero,
+                                  badgeContent: Text(
+                                    '1w+',
+                                    style: TextStyle(
+                                      fontSize: Dimens.fontSp14,
+                                      color: Colours.fontColorWihite,
+                                    ),
+                                  ),
+                                  child: SvgIcon(
+                                    SvgIcons.messageCircle,
+                                    size: 36.w,
+                                    color: Colours.fontColorWihite,
+                                  ),
+                                ),
+                                onPressed: () {},
+                              ),
+                              IconButton(
+                                icon: Badge(
+                                  badgeColor: Colors.transparent,
+                                  padding: EdgeInsets.zero,
+                                  badgeContent: Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 2.w),
+                                    decoration: BoxDecoration(
+                                      color: Colours.fontColor2,
+                                      borderRadius: BorderRadius.circular(
+                                        Dimens.radiusDp12,
+                                      ),
+                                    ),
+                                    child: Text(
+                                      '倍速',
+                                      style: TextStyle(
+                                        fontSize: Dimens.fontSp10,
+                                        color: Colours.fontColorWihite,
+                                      ),
+                                    ),
+                                  ),
+                                  child: SvgIcon(
+                                    SvgIcons.dotsVertical,
+                                    size: 36.w,
+                                    color: Colours.fontColorWihite,
+                                  ),
+                                ),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Positioned(
+                        left: 250.w,
+                        child: Transform.rotate(
+                          angle: 0,
+                          child: Image.asset(
+                            'assets/images/pickup.png',
+                            height: 250.h,
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -112,98 +227,6 @@ class PlayMusicScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          icon: SvgIcon(
-                            SvgIcons.heart,
-                            color: Colours.fontColorWihite,
-                            size: 36.w,
-                          ),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: SvgIcon(
-                            SvgIcons.cloudDownload,
-                            size: 36.w,
-                            color: Colours.fontColorWihite,
-                          ),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Badge(
-                            elevation: 0,
-                            badgeColor: Colors.transparent,
-                            padding: EdgeInsets.zero,
-                            badgeContent: Text(
-                              '77',
-                              style: TextStyle(
-                                fontSize: Dimens.fontSp14,
-                                color: Colours.fontColorWihite,
-                              ),
-                            ),
-                            child: SvgIcon(
-                              SvgIcons.discover,
-                              size: 36.w,
-                              color: Colours.fontColorWihite,
-                            ),
-                          ),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Badge(
-                            elevation: 0,
-                            badgeColor: Colors.transparent,
-                            padding: EdgeInsets.zero,
-                            badgeContent: Text(
-                              '1w+',
-                              style: TextStyle(
-                                fontSize: Dimens.fontSp14,
-                                color: Colours.fontColorWihite,
-                              ),
-                            ),
-                            child: SvgIcon(
-                              SvgIcons.messageCircle,
-                              size: 36.w,
-                              color: Colours.fontColorWihite,
-                            ),
-                          ),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Badge(
-                            badgeColor: Colors.transparent,
-                            padding: EdgeInsets.zero,
-                            badgeContent: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 2.w),
-                              decoration: BoxDecoration(
-                                color: Colours.fontColor2,
-                                borderRadius: BorderRadius.circular(
-                                  Dimens.radiusDp12,
-                                ),
-                              ),
-                              child: Text(
-                                '倍速',
-                                style: TextStyle(
-                                  fontSize: Dimens.fontSp10,
-                                  color: Colours.fontColorWihite,
-                                ),
-                              ),
-                            ),
-                            child: SvgIcon(
-                              SvgIcons.dotsVertical,
-                              size: 36.w,
-                              color: Colours.fontColorWihite,
-                            ),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-
-                    Gaps.vGap24,
-
                     // 进度条
                     Row(
                       children: [
