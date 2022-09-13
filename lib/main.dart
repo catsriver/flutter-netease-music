@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:netease_cloud_music/screen/play_music/play_music_screen.dart';
 
 import 'provider/theme_provider.dart';
-import 'screen/home/home_screen.dart';
 
 void main() {
   runApp(

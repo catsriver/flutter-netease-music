@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -204,13 +206,17 @@ class PlayMusicScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+
+                      // 唱头
                       Positioned(
                         left: 250.w,
                         child: Transform.rotate(
-                          angle: 0,
+                          angle: -4 * pi / 180,
+                          origin: Offset(-140.w / 2, -250.h / 2),
                           child: Image.asset(
                             'assets/images/pickup.png',
                             height: 250.h,
+                            width: 140.w,
                           ),
                         ),
                       ),
