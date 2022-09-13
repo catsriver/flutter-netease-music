@@ -33,6 +33,8 @@ class ThemeNotifier extends StateNotifier<ThemeData> {
           color: Colours.fontColor1,
         ),
       ),
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
     );
   }
 }
