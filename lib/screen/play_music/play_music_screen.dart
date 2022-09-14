@@ -292,6 +292,9 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                             onChanged: (value) async {
                               final position = Duration(seconds: value.toInt());
                               await audioPlayer.seek(position);
+
+                              /// Play audio if was paused
+                              await audioPlayer.resume();
                             },
                           ),
                         ),
