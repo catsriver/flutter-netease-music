@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../res/resources.dart';
+import '../../util/formatTime.dart';
 import '../../widgets/common/svg_icon.dart';
 
 class PlayMusicScreen extends StatefulWidget {
@@ -16,6 +17,8 @@ class PlayMusicScreen extends StatefulWidget {
 
 class _PlayMusicScreenState extends State<PlayMusicScreen> {
   bool isPlaying = false;
+  Duration duration = Duration.zero;
+  Duration position = Duration.zero;
 
   @override
   Widget build(BuildContext context) {
@@ -241,7 +244,7 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                     Row(
                       children: [
                         Text(
-                          '00:00',
+                          formatTime(position),
                           style: TextStyle(
                             fontSize: Dimens.fontSp18,
                             color: Colours.fontColor4,
@@ -249,12 +252,14 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                         ),
                         Expanded(
                           child: Slider(
-                            value: 0,
+                            min: 0,
+                            max: duration.inSeconds.toDouble(),
+                            value: position.inSeconds.toDouble(),
                             onChanged: (value) {},
                           ),
                         ),
                         Text(
-                          '03:00',
+                          formatTime(duration),
                           style: TextStyle(
                             fontSize: Dimens.fontSp18,
                             color: Colours.fontColor4,
