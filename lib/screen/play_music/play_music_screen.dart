@@ -31,6 +31,30 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
   }
 
   @override
+  void initState() {
+    /// Listen to states: playing, paused, stopped
+    audioPlayer.onPlayerStateChanged.listen((state) {
+      isPlaying = state == PlayerState.playing;
+    });
+
+    /// Listen to audio duration
+    audioPlayer.onDurationChanged.listen((newDuration) {
+      setState(() {
+        duration = newDuration;
+      });
+    });
+
+    /// Listen to audio position
+    audioPlayer.onPositionChanged.listen((newPosition) {
+      setState(() {
+        position = newPosition;
+      });
+    });
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
