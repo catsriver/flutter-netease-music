@@ -289,7 +289,10 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                             min: 0,
                             max: duration.inSeconds.toDouble(),
                             value: position.inSeconds.toDouble(),
-                            onChanged: (value) {},
+                            onChanged: (value) async {
+                              final position = Duration(seconds: value.toInt());
+                              await audioPlayer.seek(position);
+                            },
                           ),
                         ),
                         Text(
