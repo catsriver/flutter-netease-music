@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,9 +17,18 @@ class PlayMusicScreen extends StatefulWidget {
 }
 
 class _PlayMusicScreenState extends State<PlayMusicScreen> {
+  final audioPlayer = AudioPlayer();
   bool isPlaying = false;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
+  String url =
+      'https://m704.music.126.net/20220915023433/3ea4cf0396568cc20be6fa703a62931b/jdyyaac/010c/0e0b/035f/6f0decfc589ad5a78c8345d092cd421e.m4a?authSecret=000001833d311f6007560aaba38a05fd';
+
+  @override
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -307,10 +317,12 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                               size: 36.w,
                               color: Colours.fontColorWihite,
                             ),
-                            onPressed: () {
-                              setState(() {
-                                isPlaying = !isPlaying;
-                              });
+                            onPressed: () async {
+                              if (isPlaying) {
+                                await audioPlayer.pause();
+                              } else {
+                                await audioPlayer.play(UrlSource(url));
+                              }
                             },
                           ),
                         ),
