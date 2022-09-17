@@ -4,6 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../res/resources.dart';
 import '../../util/formatTime.dart';
@@ -78,7 +79,9 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
               color: Colours.fontColorWihite,
               size: 60.w,
             ),
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
           ),
           title: Column(
             children: [

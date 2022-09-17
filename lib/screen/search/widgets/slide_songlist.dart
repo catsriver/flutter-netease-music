@@ -27,7 +27,7 @@ class SlideSongList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).go(PlayMusicScreen.routeName),
+      onTap: () => GoRouter.of(context).push(PlayMusicScreen.routeName),
       child: SizedBox(
         height: 90.h,
         child: Row(
