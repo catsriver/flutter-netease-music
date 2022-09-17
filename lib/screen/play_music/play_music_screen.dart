@@ -22,7 +22,7 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
   String url =
-      'https://m704.music.126.net/20220915023433/3ea4cf0396568cc20be6fa703a62931b/jdyyaac/010c/0e0b/035f/6f0decfc589ad5a78c8345d092cd421e.m4a?authSecret=000001833d311f6007560aaba38a05fd';
+      'https://m701.music.126.net/20220917141428/8534c2d88c665d6e327626b7fbbab582/jdyyaac/010c/0e0b/035f/6f0decfc589ad5a78c8345d092cd421e.m4a';
 
   @override
   void dispose() {
