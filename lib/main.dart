@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:netease_cloud_music/screen/play_music/play_music_screen.dart';
 
 import 'provider/theme_provider.dart';
+import 'routes/routes.dart';
 
 void main() {
   runApp(
@@ -23,12 +23,13 @@ class App extends ConsumerWidget {
     return ScreenUtilInit(
       designSize: const Size(540, 1200), // 一加8T
       builder: (_, __) {
-        return MaterialApp(
+        return MaterialApp.router(
           title: '网易云音乐',
           debugShowCheckedModeBanner: false,
           theme: theme.getTheme(),
-          // home: const HomeScreen(),
-          home: const PlayMusicScreen(),
+          routeInformationProvider: routes.routeInformationProvider,
+          routeInformationParser: routes.routeInformationParser,
+          routerDelegate: routes.routerDelegate,
         );
       },
     );

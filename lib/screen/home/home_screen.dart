@@ -10,6 +10,8 @@ import '../../util/keys.dart';
 import '../../widgets/app_drawer/app_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const routeName = '/';
+
   const HomeScreen({
     Key? key,
   }) : super(key: key);

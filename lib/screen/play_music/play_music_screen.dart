@@ -10,6 +10,8 @@ import '../../util/formatTime.dart';
 import '../../widgets/common/svg_icon.dart';
 
 class PlayMusicScreen extends StatefulWidget {
+  static const routeName = '/player';
+
   const PlayMusicScreen({Key? key}) : super(key: key);
 
   @override
