@@ -5,7 +5,9 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:netease_cloud_music/util/formatCount.dart';
 
+import '../../models/artist.dart';
 import '../../res/resources.dart';
 import '../../util/formatTime.dart';
 import '../../widgets/common/svg_icon.dart';
@@ -13,7 +15,22 @@ import '../../widgets/common/svg_icon.dart';
 class PlayMusicScreen extends StatefulWidget {
   static const routeName = '/player';
 
-  const PlayMusicScreen({Key? key}) : super(key: key);
+  const PlayMusicScreen({
+    Key? key,
+    required this.name,
+    required this.id,
+    required this.coverImg,
+    required this.artists,
+    required this.commentCounts,
+    required this.coverCounts,
+  }) : super(key: key);
+
+  final String name; // 歌曲名称
+  final int id; // 歌曲id
+  final String coverImg; // 歌曲封面
+  final List<Artist> artists; // 歌手
+  final int commentCounts; // 评论数
+  final int coverCounts; // 翻唱数
 
   @override
   State<PlayMusicScreen> createState() => _PlayMusicScreenState();
@@ -25,7 +42,7 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
   String url =
-      'https://m701.music.126.net/20220917141428/8534c2d88c665d6e327626b7fbbab582/jdyyaac/010c/0e0b/035f/6f0decfc589ad5a78c8345d092cd421e.m4a';
+      'http://m801.music.126.net/20220917161315/beb8878b4e8878b2f6ce0cf57b0ca310/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/14096406890/4456/9d4d/a682/71a28cacdbe22858db9b91cb85d6d708.mp3';
 
   @override
   void dispose() {
@@ -86,7 +103,7 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
           title: Column(
             children: [
               Text(
-                '再见莫妮卡',
+                widget.name,
                 style: TextStyle(
                   fontSize: Dimens.fontSp24,
                   color: Colours.fontColorWihite,
@@ -148,9 +165,9 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                               SizedBox(
                                 width: 266.w,
                                 height: 266.w,
-                                child: const CircleAvatar(
+                                child: CircleAvatar(
                                   backgroundImage: NetworkImage(
-                                    'http://p4.music.126.net/SWDOrvO3f6L8Q1xGPTbb6w==/109951163102543599.jpg',
+                                    widget.coverImg,
                                   ),
                                 ),
                               ),
@@ -186,7 +203,7 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                                 badgeColor: Colors.transparent,
                                 padding: EdgeInsets.zero,
                                 badgeContent: Text(
-                                  '77',
+                                  formatCount(widget.coverCounts),
                                   style: TextStyle(
                                     fontSize: Dimens.fontSp14,
                                     color: Colours.fontColorWihite,
@@ -206,7 +223,7 @@ class _PlayMusicScreenState extends State<PlayMusicScreen> {
                                 badgeColor: Colors.transparent,
                                 padding: EdgeInsets.zero,
                                 badgeContent: Text(
-                                  '1w+',
+                                  formatCount(widget.commentCounts),
                                   style: TextStyle(
                                     fontSize: Dimens.fontSp14,
                                     color: Colours.fontColorWihite,
